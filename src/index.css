@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-wrapper {
+    @apply fixed bottom-0 left-0 flex h-16 w-full items-center justify-between px-6 lg:relative;
+  }
+}
