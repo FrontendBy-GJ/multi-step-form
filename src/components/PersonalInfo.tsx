@@ -50,58 +50,84 @@ const PersonalInfo = () => {
 
   return (
     <>
-      <h1>Personal Info</h1>
-      <p>Please provide your name, email address, and phone number.</p>
+      <h1 className="text-2xl font-medium text-primary-Marine-blue">
+        Personal Info
+      </h1>
+      <p className="mt-3 text-neutral-Cool-gray">
+        Please provide your name, email address, and phone number.
+      </p>
+
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        <div className="my-4">
+        <div className="my-4 grid gap-4">
           <div>
             <div className="flex justify-between">
-              <label htmlFor="name">Name </label>
-              <p className="font-bold text-red-500">{errors.name?.message}</p>
+              <label htmlFor="name" className="label">
+                Name{" "}
+              </label>
+              <p className="font-semibold text-primary-Strawberry-red">
+                {errors.name?.message}
+              </p>
             </div>
             <input
               type="text"
               id="name"
               placeholder="e.g. Jane Doe"
               className={`${
-                errors.name?.message ? "border-red-500" : "border-gray-300"
-              } w-full rounded-md border-2 px-4 py-1`}
+                errors.name?.message
+                  ? "border-primary-Strawberry-red"
+                  : "border-neutral-Light-gray"
+              } w-full rounded border px-5 py-2 font-medium placeholder:text-neutral-Cool-gray backdrop:bg-none hover:border-primary-Purplish-blue focus:outline-none focus:ring focus:ring-primary-Purplish-blue/80 focus-visible:ring-offset-2`}
               {...register("name")}
             />
           </div>
+
           <div>
-            <div className="flex justify-between">
-              <label htmlFor="email">Email </label>
-              <p className="font-bold text-red-500">{errors.email?.message}</p>
+            <div className="flex flex-wrap justify-between">
+              <label htmlFor="email" className="label">
+                Email{" "}
+              </label>
+              <p className="font-semibold text-primary-Strawberry-red">
+                {errors.email?.message}
+              </p>
             </div>
             <input
               type="email"
               id="email"
               placeholder="e.g. jane@email.com"
               className={`${
-                errors.email?.message ? "border-red-500" : "border-gray-300"
-              } w-full rounded-md border-2 px-4 py-1`}
+                errors.email?.message
+                  ? "border-primary-Strawberry-red"
+                  : "border-neutral-Light-gray"
+              } w-full rounded border px-5 py-2 font-medium placeholder:text-neutral-Cool-gray focus:outline-none focus:ring focus:ring-primary-Purplish-blue/80 focus-visible:ring-offset-2`}
               {...register("email")}
             />
           </div>
           <div>
             <div className="flex justify-between">
-              <label htmlFor="name">Phone </label>
-              <p className="font-bold text-red-500">{errors.phone?.message}</p>
+              <label htmlFor="name" className="label">
+                Phone{" "}
+              </label>
+              <p className="font-semibold text-primary-Strawberry-red">
+                {errors.phone?.message}
+              </p>
             </div>
             <input
               type="text"
               id="phone"
               placeholder="e.g. 123 456 7890"
               className={`${
-                errors.phone?.message ? "border-red-500" : "border-gray-300"
-              } w-full rounded-md border-2 px-4 py-1`}
+                errors.phone?.message
+                  ? "border-primary-Strawberry-red"
+                  : "border-neutral-Light-gray"
+              } w-full rounded border px-5 py-2 font-medium placeholder:text-neutral-Cool-gray focus:outline-none focus:ring focus:ring-primary-Purplish-blue/80 focus-visible:ring-offset-2`}
               {...register("phone")}
             />
           </div>
         </div>
         <div className="btn-wrapper justify-end">
-          <button type="submit">Next Step</button>
+          <button type="submit" className="btn">
+            Next Step
+          </button>
         </div>
       </form>
     </>

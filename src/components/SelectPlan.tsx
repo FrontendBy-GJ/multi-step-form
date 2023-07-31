@@ -40,15 +40,21 @@ const SelectPlan = () => {
 
   return (
     <>
-      <h1>Select your plan</h1>
-      <p>You have the option of monthly or yearly billing.</p>
+      <h1 className="text-2xl font-medium text-primary-Marine-blue">
+        Select your plan
+      </h1>
+      <p className="mt-3 text-neutral-Cool-gray">
+        You have the option of monthly or yearly billing.
+      </p>
 
       {errors.selectedPlan && (
-        <p className="text-red-500">{errors.selectedPlan.message}</p>
+        <p className="mt-2 text-primary-Strawberry-red">
+          {errors.selectedPlan.message}
+        </p>
       )}
 
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        <div className="mt-8 grid grid-rows-3 gap-5">
+        <div className="mt-7 grid grid-rows-3 gap-3">
           {plans.map((plan, index) => (
             <Controller
               key={plan.name}
@@ -65,18 +71,30 @@ const SelectPlan = () => {
                     onChange(plan.name);
                     handlePlanSelected(plan, planPrices, index);
                   }}
-                  className={`h-24 rounded-lg px-5 text-left outline lg:h-24 ${
-                    value === plan.name ? "bg-purple-400" : ""
+                  className={`h-24 rounded-lg border border-neutral-Light-gray px-4 text-left ring-offset-2 transition hover:border-primary-Purplish-blue focus:outline-none focus:ring focus:ring-primary-Purplish-blue ${
+                    value === plan.name
+                      ? "border-primary-Purplish-blue bg-primary-Purplish-blue/5"
+                      : ""
                   }`}
                 >
-                  <div className="flex items-start gap-5">
+                  <div
+                    className={`flex gap-3 items-${
+                      isYearly ? "start" : "center"
+                    }`}
+                  >
                     <img src={plan.icon} alt={plan.name} />
-                    <div className="">
-                      <h2>{plan.name}</h2>
-                      <p>
+                    <div>
+                      <h2 className="text-lg font-medium text-primary-Marine-blue">
+                        {plan.name}
+                      </h2>
+                      <p className="text-sm text-neutral-Cool-gray">
                         ${planPrices[index]}/{billingCycleShort}
                       </p>
-                      {isYearly && <p>2 months free</p>}
+                      {isYearly && (
+                        <p className="text-sm text-primary-Marine-blue">
+                          2 months free
+                        </p>
+                      )}
                     </div>
                   </div>
                 </button>
@@ -85,15 +103,17 @@ const SelectPlan = () => {
           ))}
         </div>
 
-        <div className="mt-4 flex justify-center rounded-md bg-slate-200 py-4">
+        <div className="mt-8 flex justify-center rounded-md bg-neutral-Magnolia py-4">
           <label
             htmlFor="yearly-switch"
             className="flex cursor-pointer items-center gap-4"
           >
             <span
               className={`${
-                !isYearly ? "text-blue-700" : "text-slate-400/70"
-              } text-sm font-bold`}
+                !isYearly
+                  ? "text-primary-Marine-blue"
+                  : "text-neutral-Cool-gray"
+              } font-semibold`}
             >
               Monthly
             </span>
@@ -104,8 +124,8 @@ const SelectPlan = () => {
             />
             <span
               className={`${
-                isYearly ? "text-blue-700" : "text-slate-400/70"
-              } text-sm font-bold`}
+                isYearly ? "text-primary-Marine-blue" : "text-neutral-Cool-gray"
+              } font-semibold`}
             >
               Yearly
             </span>
@@ -118,7 +138,9 @@ const SelectPlan = () => {
           >
             Go Back
           </button>
-          <button type="submit">Next Step</button>
+          <button type="submit" className="btn">
+            Next Step
+          </button>
         </div>
       </form>
     </>

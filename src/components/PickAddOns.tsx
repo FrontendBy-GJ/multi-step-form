@@ -15,8 +15,12 @@ const PickAddOns = () => {
 
   return (
     <>
-      <h1>Pick add-ons</h1>
-      <p>Add-ons help enhance your gaming experience.</p>
+      <h1 className="text-2xl font-medium text-primary-Marine-blue">
+        Pick add-ons
+      </h1>
+      <p className="mt-3 text-neutral-Cool-gray">
+        Add-ons help enhance your gaming experience.
+      </p>
 
       <form
         noValidate
@@ -38,12 +42,18 @@ const PickAddOns = () => {
               render={({ field: { onChange, value } }) => (
                 <label
                   htmlFor={addOn.name}
-                  className="grid h-24 cursor-pointer grid-cols-3 place-items-center outline"
+                  className={`flex h-24 cursor-pointer items-center justify-between gap-4 rounded-lg border border-neutral-Light-gray px-3 transition hover:border-primary-Purplish-blue ${
+                    value
+                      ? "border-primary-Purplish-blue bg-primary-Purplish-blue/5"
+                      : ""
+                  }`}
                 >
                   <input
                     type="checkbox"
+                    className="h-5 w-5 rounded border-primary-Purplish-blue text-primary-Purplish-blue focus:ring-primary-Purplish-blue"
                     name={addOn.name}
                     id={addOn.name}
+                    value={value}
                     checked={value}
                     onChange={(e) => {
                       onChange(e.currentTarget.checked);
@@ -62,11 +72,15 @@ const PickAddOns = () => {
                       }
                     }}
                   />
-                  <div>
-                    <h2>{addOn.name}</h2>
-                    <p>{addOn.info}</p>
+                  <div className="w-full">
+                    <h2 className="font-medium text-primary-Marine-blue">
+                      {addOn.name}
+                    </h2>
+                    <p className="text-sm text-neutral-Cool-gray">
+                      {addOn.info}
+                    </p>
                   </div>
-                  <p>
+                  <p className="text-sm text-primary-Purplish-blue">
                     ${addOnPrices[index]}/{billingCycleShort}
                   </p>
                 </label>
@@ -74,6 +88,7 @@ const PickAddOns = () => {
             />
           ))}
         </div>
+
         <div className="btn-wrapper">
           <button
             type="button"
@@ -81,7 +96,9 @@ const PickAddOns = () => {
           >
             Go Back
           </button>
-          <button type="submit">Next Step</button>
+          <button type="submit" className="btn">
+            Next Step
+          </button>
         </div>
       </form>
     </>
