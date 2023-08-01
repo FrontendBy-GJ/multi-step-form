@@ -50,12 +50,14 @@ const PersonalInfo = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-medium text-primary-Marine-blue">
-        Personal Info
-      </h1>
-      <p className="mt-3 text-neutral-Cool-gray">
-        Please provide your name, email address, and phone number.
-      </p>
+      <div>
+        <h1 className="text-2xl font-medium text-primary-Marine-blue">
+          Personal Info
+        </h1>
+        <p className="mt-3 text-neutral-Cool-gray">
+          Please provide your name, email address, and phone number.
+        </p>
+      </div>
 
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
         <div className="my-4 grid gap-4">
