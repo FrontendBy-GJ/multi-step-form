@@ -5,6 +5,7 @@ import Review from "./Review";
 import useFormContext from "../hooks/useFormContext";
 import desktopBG from "../assets/bg-sidebar-desktop.svg";
 import mobileBG from "../assets/bg-sidebar-mobile.svg";
+import complete from "../assets/icons/icon-thank-you.svg";
 
 const Form = () => {
   const { currentStep, canConfirm } = useFormContext();
@@ -34,7 +35,7 @@ const Form = () => {
                   index === currentStep
                     ? "border-none bg-primary-Light-blue font-bold text-black"
                     : "border-current text-neutral-Alabaster"
-                } grid aspect-square w-9 place-items-center rounded-full border transition duration-500 animate-in zoom-in-0 `}
+                } grid aspect-square w-9 place-items-center rounded-full border transition duration-500 animate-in zoom-in-0 sm:w-16 sm:text-xl `}
               >
                 {index + 1}
               </div>
@@ -42,17 +43,20 @@ const Form = () => {
         </div>
       </div>
 
-      <main>
-        <section className="relative mx-auto -mt-20 w-full max-w-[min(90%,100%)] rounded-lg bg-white p-5 shadow-lg">
+      <main className="px-5">
+        <section className="relative mx-auto -mt-20 max-w-xl rounded-lg bg-white p-5 shadow-lg sm:-mt-32 md:-mt-40">
           {canConfirm ? (
-            <>
-              <h1>Thank you!</h1>
-              <p>
+            <div className="flex flex-col items-center gap-5 py-12 text-center">
+              <img src={complete} role="presentation" />
+              <h1 className="text-2xl font-bold text-primary-Marine-blue">
+                Thank you!
+              </h1>
+              <p className="text-neutral-Cool-gray">
                 Thanks for confirming your subscription! We hope you have fun
                 using our platform. If you ever need support, please feel free
                 to email us at support@loremgaming.com.
               </p>
-            </>
+            </div>
           ) : (
             <>{formInputs[currentStep]}</>
           )}
