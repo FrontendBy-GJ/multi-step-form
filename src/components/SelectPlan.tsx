@@ -71,7 +71,7 @@ const SelectPlan = () => {
                     onChange(plan.name);
                     handlePlanSelected(plan, planPrices, index);
                   }}
-                  className={`h-24 rounded-lg border border-neutral-Light-gray px-4 text-left ring-offset-2 transition hover:border-primary-Purplish-blue focus:outline-none focus:ring focus:ring-primary-Purplish-blue ${
+                  className={`h-24 rounded-lg border-2 border-neutral-Light-gray px-4 text-left ring-offset-2 transition hover:border-primary-Purplish-blue focus:outline-none focus:ring focus:ring-primary-Purplish-blue ${
                     value === plan.name
                       ? "border-primary-Purplish-blue bg-primary-Purplish-blue/5"
                       : ""

@@ -42,7 +42,7 @@ const PickAddOns = () => {
               render={({ field: { onChange, value } }) => (
                 <label
                   htmlFor={addOn.name}
-                  className={`flex h-24 cursor-pointer items-center justify-between gap-4 rounded-lg border border-neutral-Light-gray px-3 transition hover:border-primary-Purplish-blue ${
+                  className={`flex h-24 cursor-pointer items-center justify-between gap-4 rounded-lg border-2 border-neutral-Light-gray px-3 transition hover:border-primary-Purplish-blue ${
                     value
                       ? "border-primary-Purplish-blue bg-primary-Purplish-blue/5"
                       : ""
