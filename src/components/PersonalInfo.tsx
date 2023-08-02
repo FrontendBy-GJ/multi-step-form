@@ -2,6 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import useFormContext from "../hooks/useFormContext";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Buttons from "./Buttons";
 
 const PersonalInfoSchema = z.object({
   name: z.string().nonempty("This field is required"),
@@ -54,7 +55,7 @@ const PersonalInfo = () => {
         <div className="my-4 grid gap-4">
           <div>
             <div className="flex justify-between">
-              <label htmlFor="name" className="label">
+              <label htmlFor="name" className="mb-1 text-primary-Marine-blue">
                 Name{" "}
               </label>
               <p className="font-semibold text-primary-Strawberry-red">
@@ -76,7 +77,7 @@ const PersonalInfo = () => {
 
           <div>
             <div className="flex flex-wrap justify-between">
-              <label htmlFor="email" className="label">
+              <label htmlFor="email" className="mb-1 text-primary-Marine-blue">
                 Email{" "}
               </label>
               <p className="font-semibold text-primary-Strawberry-red">
@@ -97,7 +98,7 @@ const PersonalInfo = () => {
           </div>
           <div>
             <div className="flex justify-between">
-              <label htmlFor="name" className="label">
+              <label htmlFor="name" className="mb-1 text-primary-Marine-blue">
                 Phone{" "}
               </label>
               <p className="font-semibold text-primary-Strawberry-red">
@@ -117,11 +118,8 @@ const PersonalInfo = () => {
             />
           </div>
         </div>
-        <div className="btn-wrapper justify-end">
-          <button type="submit" className="btn">
-            Next Step
-          </button>
-        </div>
+
+        <Buttons />
       </form>
     </>
   );

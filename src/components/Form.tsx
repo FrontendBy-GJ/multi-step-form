@@ -86,7 +86,7 @@ const Form = () => {
                 <h1 className="text-3xl font-bold text-primary-Marine-blue">
                   Thank you!
                 </h1>
-                <p className="text-neutral-Cool-gray lg:px-8">
+                <p className="text-neutral-Cool-gray lg:px-5">
                   Thanks for confirming your subscription! We hope you have fun
                   using our platform. If you ever need support, please feel free
                   to email us at support@loremgaming.com.

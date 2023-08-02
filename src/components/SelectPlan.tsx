@@ -1,6 +1,7 @@
 import { useForm, Controller } from "react-hook-form";
 import useFormContext from "../hooks/useFormContext";
 import { Switch } from "@/components/ui/switch";
+import Buttons from "./Buttons";
 
 const SelectPlan = () => {
   const {
@@ -124,17 +125,8 @@ const SelectPlan = () => {
             </span>
           </label>
         </div>
-        <div className="btn-wrapper">
-          <button
-            type="button"
-            onClick={() => setCurrentStep((prevStep) => prevStep - 1)}
-          >
-            Go Back
-          </button>
-          <button type="submit" className="btn">
-            Next Step
-          </button>
-        </div>
+
+        <Buttons />
       </form>
     </>
   );

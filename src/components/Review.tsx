@@ -1,4 +1,5 @@
 import useFormContext from "../hooks/useFormContext";
+import Buttons from "./Buttons";
 
 const Review = () => {
   const {
@@ -6,7 +7,6 @@ const Review = () => {
     billingCycleShort,
     setCurrentStep,
     selectedAddOns,
-    setCanConfirm,
     isYearly,
     total,
   } = useFormContext();
@@ -21,7 +21,7 @@ const Review = () => {
             </p>
             <button
               onClick={() => setCurrentStep(1)}
-              className="text-neutral-Cool-gray underline"
+              className="text-neutral-Cool-gray underline transition hover:text-primary-Purplish-blue"
             >
               Change
             </button>
@@ -58,14 +58,7 @@ const Review = () => {
         </p>
       </div>
 
-      <div className="btn-wrapper">
-        <button onClick={() => setCurrentStep((prevStep) => prevStep - 1)}>
-          Go Back
-        </button>
-        <button onClick={() => setCanConfirm(true)} className="btn">
-          Confirm
-        </button>
-      </div>
+      <Buttons />
     </>
   );
 };

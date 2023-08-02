@@ -1,5 +1,6 @@
 import { useForm, Controller } from "react-hook-form";
 import useFormContext from "../hooks/useFormContext";
+import Buttons from "./Buttons";
 
 const PickAddOns = () => {
   const {
@@ -82,17 +83,7 @@ const PickAddOns = () => {
           ))}
         </div>
 
-        <div className="btn-wrapper">
-          <button
-            type="button"
-            onClick={() => setCurrentStep((prevStep) => prevStep - 1)}
-          >
-            Go Back
-          </button>
-          <button type="submit" className="btn">
-            Next Step
-          </button>
-        </div>
+        <Buttons />
       </form>
     </>
   );
