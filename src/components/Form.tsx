@@ -11,10 +11,30 @@ const Form = () => {
   const { currentStep, canConfirm } = useFormContext();
 
   const formInputs = [
-    { form: <PersonalInfo />, title: "Your Info" },
-    { form: <SelectPlan />, title: "Select Plan" },
-    { form: <PickAddOns />, title: "Add-ons" },
-    { form: <Review />, title: "Summary" },
+    {
+      form: <PersonalInfo />,
+      title: "Your Info",
+      formHeading: "Personal info",
+      formInfo: "Please provide your name, email address, and phone number.",
+    },
+    {
+      form: <SelectPlan />,
+      title: "Select Plan",
+      formHeading: "Select your plan",
+      formInfo: "You have the option of monthly or yearly billing.",
+    },
+    {
+      form: <PickAddOns />,
+      title: "Add-ons",
+      formHeading: "Pick add-ons",
+      formInfo: "Add-ons help enhance your gaming experience.",
+    },
+    {
+      form: <Review />,
+      title: "Summary",
+      formHeading: "Finishing up",
+      formInfo: "Double-check everything looks OK before confirming.",
+    },
   ];
 
   return (
@@ -38,7 +58,7 @@ const Form = () => {
                     index === currentStep
                       ? "border-none bg-primary-Light-blue font-bold text-black"
                       : "border-current text-neutral-Alabaster"
-                  } grid aspect-square w-9 place-items-center rounded-full border transition duration-500 animate-in zoom-in-0`}
+                  } grid aspect-square w-11 place-items-center rounded-full border text-lg transition duration-500 animate-in zoom-in-0`}
                 >
                   {index + 1}
                 </div>
@@ -58,9 +78,7 @@ const Form = () => {
 
         <main className="mx-auto w-full max-w-lg px-5 lg:p-0">
           <section
-            className={`relative -mt-20 h-full w-full max-w-3xl rounded-lg bg-white p-5 shadow-lg sm:-mt-56 md:flex md:flex-col md:shadow-none lg:m-0 lg:p-0 lg:pt-${
-              currentStep !== 3 ? "10" : "0"
-            }`}
+            className={`relative -mt-[84px] h-full w-full max-w-3xl rounded-lg bg-white p-5 shadow-lg sm:-mt-56 md:flex md:flex-col md:shadow-none lg:m-0`}
           >
             {canConfirm ? (
               <div className="flex h-full flex-col items-center justify-center gap-5 py-12 text-center">
@@ -75,7 +93,17 @@ const Form = () => {
                 </p>
               </div>
             ) : (
-              <>{formInputs[currentStep].form}</>
+              <>
+                <div className="pt-5">
+                  <h1 className="text-2xl font-bold text-primary-Marine-blue lg:text-3xl">
+                    {formInputs[currentStep].formHeading}
+                  </h1>
+                  <p className="mt-3 text-neutral-Cool-gray">
+                    {formInputs[currentStep].formInfo}
+                  </p>
+                </div>
+                {formInputs[currentStep].form}
+              </>
             )}
           </section>
         </main>

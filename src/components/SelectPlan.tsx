@@ -40,15 +40,6 @@ const SelectPlan = () => {
 
   return (
     <>
-      <div>
-        <h1 className="text-2xl font-medium text-primary-Marine-blue">
-          Select your plan
-        </h1>
-        <p className="mt-3 text-neutral-Cool-gray">
-          You have the option of monthly or yearly billing.
-        </p>
-      </div>
-
       {errors.selectedPlan && (
         <p className="mt-2 text-primary-Strawberry-red">
           {errors.selectedPlan.message}

@@ -13,13 +13,6 @@ const Review = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-medium text-primary-Marine-blue">
-        Finishing up
-      </h1>
-      <p className="mt-3 text-neutral-Cool-gray">
-        Double-check everything looks OK before confirming.
-      </p>
-
       <div className="my-4 flex flex-col gap-5 divide-y-2 divide-neutral-Light-gray rounded-lg bg-neutral-Magnolia p-5">
         <div className="flex justify-between">
           <div className="flex flex-col items-start">

@@ -15,13 +15,6 @@ const PickAddOns = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-medium text-primary-Marine-blue">
-        Pick add-ons
-      </h1>
-      <p className="mt-3 text-neutral-Cool-gray">
-        Add-ons help enhance your gaming experience.
-      </p>
-
       <form
         noValidate
         onSubmit={handleSubmit(() =>
