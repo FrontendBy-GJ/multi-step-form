@@ -18,15 +18,15 @@ const Form = () => {
   ];
 
   return (
-    <div className="bg-neutral-Magnolia md:flex md:h-screen md:items-center md:justify-center md:px-10">
-      <div className="min-h-screen w-full min-w-[375px] bg-neutral-Magnolia pb-24 font-Ubuntu md:flex md:min-h-0 md:max-w-5xl md:rounded-md md:bg-white md:p-5">
+    <div className="bg-neutral-Magnolia lg:flex lg:h-screen lg:items-center lg:justify-center lg:px-10">
+      <div className="min-h-screen w-full min-w-[375px] bg-neutral-Magnolia pb-24 font-Ubuntu lg:flex lg:min-h-0 lg:max-w-5xl lg:justify-between lg:rounded-lg lg:bg-white lg:p-5">
         <div className="relative">
           <picture role="presentation">
-            <source media="(min-width: 768px)" srcSet={desktopBG} />
+            <source media="(min-width: 1024px)" srcSet={desktopBG} />
             <img src={mobileBG} role="presentation" className="h-full w-full" />
           </picture>
 
-          <div className="absolute left-1/2 top-1/3 flex -translate-x-1/2 -translate-y-2/3 justify-center gap-5 md:w-max md:-translate-x-24 md:-translate-y-32 md:flex-col">
+          <div className="absolute left-1/2 top-1/3 flex -translate-x-1/2 -translate-y-2/3 justify-center gap-5 sm:-translate-y-16 lg:w-max lg:-translate-x-28 lg:-translate-y-40 lg:flex-col">
             {formInputs.map((form, index) => (
               <div
                 key={form.title}
@@ -42,7 +42,8 @@ const Form = () => {
                 >
                   {index + 1}
                 </div>
-                <div className="hidden flex-col md:flex">
+
+                <div className="hidden flex-col lg:flex">
                   <span className="text-sm uppercase text-neutral-Cool-gray">
                     Step {index + 1}
                   </span>
@@ -55,15 +56,19 @@ const Form = () => {
           </div>
         </div>
 
-        <main className="mx-auto px-5 md:p-10">
-          <section className="relative mx-auto -mt-20 max-w-xl rounded-lg bg-white p-5 shadow-lg sm:-mt-32 md:m-0 md:flex md:h-full md:flex-col md:p-0 md:shadow-none">
+        <main className="mx-auto w-full max-w-lg px-5 lg:p-0">
+          <section
+            className={`relative -mt-20 h-full w-full max-w-3xl rounded-lg bg-white p-5 shadow-lg sm:-mt-56 md:flex md:flex-col md:shadow-none lg:m-0 lg:p-0 lg:pt-${
+              currentStep !== 3 ? "10" : "0"
+            }`}
+          >
             {canConfirm ? (
-              <div className="flex flex-col items-center gap-5 py-12 text-center">
+              <div className="flex h-full flex-col items-center justify-center gap-5 py-12 text-center">
                 <img src={complete} role="presentation" />
-                <h1 className="text-2xl font-bold text-primary-Marine-blue">
+                <h1 className="text-3xl font-bold text-primary-Marine-blue">
                   Thank you!
                 </h1>
-                <p className="text-neutral-Cool-gray">
+                <p className="text-neutral-Cool-gray lg:px-8">
                   Thanks for confirming your subscription! We hope you have fun
                   using our platform. If you ever need support, please feel free
                   to email us at support@loremgaming.com.

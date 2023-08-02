@@ -40,12 +40,14 @@ const SelectPlan = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-medium text-primary-Marine-blue">
-        Select your plan
-      </h1>
-      <p className="mt-3 text-neutral-Cool-gray">
-        You have the option of monthly or yearly billing.
-      </p>
+      <div>
+        <h1 className="text-2xl font-medium text-primary-Marine-blue">
+          Select your plan
+        </h1>
+        <p className="mt-3 text-neutral-Cool-gray">
+          You have the option of monthly or yearly billing.
+        </p>
+      </div>
 
       {errors.selectedPlan && (
         <p className="mt-2 text-primary-Strawberry-red">
@@ -54,7 +56,7 @@ const SelectPlan = () => {
       )}
 
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        <div className="mt-7 grid grid-rows-3 gap-3">
+        <div className="mt-7 flex flex-col gap-3 lg:flex-row">
           {plans.map((plan, index) => (
             <Controller
               key={plan.name}
@@ -71,15 +73,15 @@ const SelectPlan = () => {
                     onChange(plan.name);
                     handlePlanSelected(plan, planPrices, index);
                   }}
-                  className={`h-24 rounded-lg border-2 border-neutral-Light-gray px-4 text-left ring-offset-2 transition hover:border-primary-Purplish-blue focus:outline-none focus:ring focus:ring-primary-Purplish-blue ${
+                  className={`h-24 rounded-lg border-2 border-neutral-Light-gray px-4 text-left ring-offset-2 transition hover:border-primary-Purplish-blue focus:outline-none focus:ring focus:ring-primary-Purplish-blue lg:h-52 lg:w-full lg:py-8 ${
                     value === plan.name
                       ? "border-primary-Purplish-blue bg-primary-Purplish-blue/5"
                       : ""
                   }`}
                 >
                   <div
-                    className={`flex gap-3 items-${
-                      isYearly ? "start" : "center"
+                    className={`flex gap-3 lg:h-full lg:flex-col lg:justify-between ${
+                      isYearly ? "items-start" : "items-center md:items-start"
                     }`}
                   >
                     <img src={plan.icon} alt={plan.name} />
