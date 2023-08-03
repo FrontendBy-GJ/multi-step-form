@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://your-solution-url.com)
-- [Live Site](https://your-live-site-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/multistep-form-REY-P7xq9_)
+- [Live Site](https://garcia-jr-multi-step-form.netlify.app)
 
 ## My process
 
