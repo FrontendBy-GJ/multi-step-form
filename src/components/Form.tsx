@@ -41,7 +41,7 @@ const Form = () => {
     <div className="bg-neutral-Magnolia lg:flex lg:h-screen lg:items-center lg:justify-center lg:px-10">
       <div className="min-h-screen w-full min-w-[375px] bg-neutral-Magnolia pb-24 font-Ubuntu lg:flex lg:min-h-0 lg:max-w-5xl lg:justify-between lg:rounded-lg lg:bg-white lg:p-5">
         <div className="relative">
-          <picture role="presentation">
+          <picture>
             <source media="(min-width: 1024px)" srcSet={desktopBG} />
             <img src={mobileBG} role="presentation" className="h-full w-full" />
           </picture>
